@@ -94,6 +94,15 @@
                                     <action selector="agregarTapped:" destination="aDT-Yt-Lzm" eventType="touchUpInside" id="0oR-cf-bf5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCt-He-Hdi">
+                                <rect key="frame" x="186" y="424.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C1E-H6-B4o">
+                                <rect key="frame" x="48" y="496" width="318" height="31"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X6Y-tu-twl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,15 +111,21 @@
                             <constraint firstItem="lB9-gs-SfF" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="5fJ-BG-BTd"/>
                             <constraint firstItem="Qtx-Tr-iu3" firstAttribute="top" secondItem="vWx-Mf-q2U" secondAttribute="bottom" constant="20" id="6c0-YQ-fAk"/>
                             <constraint firstItem="vWx-Mf-q2U" firstAttribute="top" secondItem="lB9-gs-SfF" secondAttribute="bottom" constant="20" id="97d-dM-1XW"/>
+                            <constraint firstItem="TCt-He-Hdi" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="Asm-DY-tYa"/>
                             <constraint firstItem="p2z-4Q-9Tn" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="EHi-eL-O1A"/>
                             <constraint firstItem="vWx-Mf-q2U" firstAttribute="leading" secondItem="X6Y-tu-twl" secondAttribute="leading" constant="20" id="P0m-Qn-9pu"/>
+                            <constraint firstItem="X6Y-tu-twl" firstAttribute="trailing" secondItem="C1E-H6-B4o" secondAttribute="trailing" constant="50" id="QTa-is-eBX"/>
                             <constraint firstItem="Qtx-Tr-iu3" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="U7I-t3-Waa"/>
                             <constraint firstItem="H1b-sp-MAD" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="XsM-vE-Zea"/>
                             <constraint firstItem="p2z-4Q-9Tn" firstAttribute="top" secondItem="X6Y-tu-twl" secondAttribute="top" constant="20" id="Z3e-qL-9TL"/>
                             <constraint firstItem="X6Y-tu-twl" firstAttribute="trailing" secondItem="vWx-Mf-q2U" secondAttribute="trailing" constant="20" id="ZgJ-cE-xOO"/>
                             <constraint firstItem="H1b-sp-MAD" firstAttribute="top" secondItem="p2z-4Q-9Tn" secondAttribute="bottom" constant="20" id="aww-xC-PNG"/>
                             <constraint firstItem="X6Y-tu-twl" firstAttribute="trailing" secondItem="lB9-gs-SfF" secondAttribute="trailing" constant="20" id="bYS-Dv-1kx"/>
+                            <constraint firstItem="C1E-H6-B4o" firstAttribute="top" secondItem="TCt-He-Hdi" secondAttribute="bottom" constant="50.5" id="bru-I6-cLX"/>
+                            <constraint firstItem="TCt-He-Hdi" firstAttribute="top" secondItem="Qtx-Tr-iu3" secondAttribute="bottom" constant="20" id="cYz-R6-v9K"/>
                             <constraint firstItem="lB9-gs-SfF" firstAttribute="leading" secondItem="X6Y-tu-twl" secondAttribute="leading" constant="20" id="nVH-Wp-qkD"/>
+                            <constraint firstItem="C1E-H6-B4o" firstAttribute="leading" secondItem="X6Y-tu-twl" secondAttribute="leading" constant="50" id="tgm-7U-dn0"/>
+                            <constraint firstItem="C1E-H6-B4o" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="xHe-SN-Nl6"/>
                             <constraint firstItem="vWx-Mf-q2U" firstAttribute="centerX" secondItem="urE-wF-ulc" secondAttribute="centerX" id="xwa-c5-Lpk"/>
                         </constraints>
                     </view>
@@ -120,6 +135,8 @@
                         <outlet property="grabarButton" destination="p2z-4Q-9Tn" id="uKd-po-DdF"/>
                         <outlet property="nombreTextField" destination="vWx-Mf-q2U" id="zKh-KJ-mrd"/>
                         <outlet property="reproducirButton" destination="H1b-sp-MAD" id="9Vq-Ss-EAT"/>
+                        <outlet property="tiempoGrab" destination="TCt-He-Hdi" id="bRI-yf-e0G"/>
+                        <outlet property="volumenSlider" destination="C1E-H6-B4o" id="rd1-qf-RV1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PG-cV-3tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

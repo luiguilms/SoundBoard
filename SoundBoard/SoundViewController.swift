@@ -16,26 +16,38 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var agregarButton: UIButton!
     
+    @IBOutlet weak var tiempoGrab: UILabel!
     var grabarAudio:AVAudioRecorder?
     var reproducirAudio:AVAudioPlayer?
     var audioURL:URL?
+    var timer:Timer?
     
+    @IBOutlet weak var volumenSlider: UISlider!
     @IBAction func grabarTapped(_ sender: Any) {
         if grabarAudio!.isRecording{
+            timer?.invalidate()
             grabarAudio?.stop()
             grabarButton.setTitle("GRABAR", for: .normal)
             reproducirButton.isEnabled = true
             agregarButton.isEnabled = true
         }else{
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleEverySecond), userInfo: nil, repeats: true)
             grabarAudio?.record()
             grabarButton.setTitle("DETENER", for: .normal)
             reproducirButton.isEnabled = false
         }
     }
     
+    
+    @objc func handleEverySecond(){
+        tiempoGrab.text = "Tiempo: \(String(format: "%.f", grabarAudio!.currentTime))s"
+    }
+    
     @IBAction func reproducirTapped(_ sender: Any) {
         do{
             try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
+            reproducirAudio!.volume = volumenSlider.value
             reproducirAudio!.play()
             print("Reproduciendo")
         }catch{}

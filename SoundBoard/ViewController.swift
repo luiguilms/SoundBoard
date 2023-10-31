@@ -34,7 +34,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let grabacion = grabaciones[indexPath.row]
-        cell.textLabel?.text = grabacion.nombre
+        var tiempo = Double(0)
+        do{
+            let duracionAudio = try AVAudioPlayer(data: grabacion.audio! as Data)
+            tiempo = duracionAudio.duration
+        }catch{}
+        cell.textLabel?.text = "Nombre: \(grabacion.nombre!) Tiempo: \(String(format: "%.f", tiempo))s"
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
